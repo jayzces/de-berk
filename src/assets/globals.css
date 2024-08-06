@@ -21,3 +21,14 @@
 .container {
   @apply w-full px-5 mx-auto;
 }
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  @apply outline outline-olive outline-offset-2 outline-2;
+}
+
+input {
+  font-size: inherit;
+}

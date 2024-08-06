@@ -1,0 +1,65 @@
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+
+const today = new Date()
+const nextDay = ref(new Date(today))
+nextDay.value.setDate(nextDay.value.getDate() + 1)
+
+const checkIn = ref('')
+
+const formatDate = (date: Date) => {
+  return `${date.getFullYear()}-${padNumber(date.getMonth() + 1)}-${padNumber(date.getDate())}`
+}
+
+const padNumber = (number: number) => {
+  return number < 10 ? `0${number}` : number
+}
+
+watch(checkIn, (newVal) => {
+  const newCheckIn = new Date(newVal)
+  nextDay.value = newCheckIn
+  nextDay.value.setDate(nextDay.value.getDate() + 1)
+})
+</script>
+
+<template>
+  <form class="bg-russet/70 rounded-xl px-5 py-6 flex flex-wrap gap-4 w-[420px]">
+    <h5 class="text-cream w-full text-center">Contact us to book your room</h5>
+    <input
+      type="text"
+      name="name"
+      class="px-4 leading-[48px] bg-cream text-russet rounded-md block placeholder:text-clay w-full"
+      placeholder="Name"
+    />
+    <input
+      type="text"
+      name="mobile"
+      class="px-4 leading-[48px] bg-cream text-russet rounded-md block placeholder:text-clay w-full"
+      placeholder="Phone Number"
+    />
+    <input
+      type="email"
+      name="email"
+      class="px-4 leading-[48px] bg-cream text-russet rounded-md block placeholder:text-clay w-full"
+      placeholder="Email"
+    />
+    <input
+      type="date"
+      name="check-in"
+      class="px-4 leading-[48px] bg-cream text-russet rounded-md block placeholder:text-clay w-[calc(50%_-_8px)]"
+      :min="formatDate(today)"
+      placeholder="Check In"
+      v-model="checkIn"
+    />
+    <input
+      type="date"
+      name="check-out"
+      class="px-4 leading-[48px] bg-cream text-russet rounded-md block placeholder:text-clay w-[calc(50%_-_8px)]"
+      :min="formatDate(nextDay)"
+      placeholder="Check Out"
+    />
+    <button type="submit" class="w-full rounded-md bg-olive text-white leading-[60px]">
+      Contact
+    </button>
+  </form>
+</template>

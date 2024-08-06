@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { ref, onUnmounted } from 'vue'
+import ContactForm from '@/components/ContactForm.vue'
 
 const slides = ref([
-  { bg: '#906B3A', active: true },
-  { bg: '#CF946F', active: false },
-  { bg: '#E9D7C7', active: false },
-  { bg: '#D6E0CB', active: false },
-  { bg: '#939B7B', active: false }
+  { bg: '#906B3A' },
+  { bg: '#CF946F' },
+  { bg: '#E9D7C7' },
+  { bg: '#D6E0CB' },
+  { bg: '#939B7B' }
 ])
 
 const activeSlide = ref(0)
@@ -21,7 +22,7 @@ onUnmounted(() => clearInterval(interval))
   <main>
     <!-- slider -->
     <div class="slides w-full relative">
-      <div class="slides__contents max-h-[calc(80vh_-_80px_-_8px)] h-[670px] relative">
+      <div class="slides__contents h-[670px] relative">
         <div
           v-for="(s, sI) in slides"
           :key="`slide-${sI}`"
@@ -30,6 +31,21 @@ onUnmounted(() => clearInterval(interval))
           :style="{ backgroundColor: s.bg }"
         ></div>
       </div>
+
+      <div class="slides__overlays absolute top-0 left-0 right-0 bottom-0 flex">
+        <div class="container pr-0 flex justify-between items-center m-auto">
+          <div>
+            <h1 class="roboto-serif text-cream text-5xl">Holiday Home De Berk</h1>
+            <h2 class="roboto-serif text-soft-peach text-4xl mt-5 leading-[3rem]">
+              The ideal base for those who enjoy walking, <br />
+              and cycling in a peaceful environment
+            </h2>
+          </div>
+
+          <ContactForm />
+        </div>
+      </div>
+
       <div
         class="slide__controls flex justify-center gap-5 absolute bottom-6 mx-auto left-0 right-0"
       >

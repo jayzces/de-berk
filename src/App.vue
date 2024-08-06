@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import LoadingIndicator from '@/components/LoadingIndicator.vue'
 import NavBar from '@/components/NavBar.vue'
 </script>
