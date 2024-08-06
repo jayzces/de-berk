@@ -23,7 +23,12 @@ watch(checkIn, (newVal) => {
 </script>
 
 <template>
-  <form class="bg-russet/70 rounded-xl px-5 py-6 w-[420px] relative flex flex-wrap gap-4" netlify>
+  <form
+    class="bg-russet/70 rounded-xl px-5 py-6 w-[420px] relative flex flex-wrap gap-4"
+    netlify
+    name="contact-form"
+    method="POST"
+  >
     <h5 class="text-cream w-full text-center">Contact us to book your room</h5>
     <input
       type="text"
