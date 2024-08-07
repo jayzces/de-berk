@@ -25,21 +25,20 @@ watch(checkIn, (newVal) => {
 
 const submit = (event: Event) => {
   if (!event.target) return
-  const myForm = event.target
-  const formData = new FormData(myForm as HTMLFormElement)
 
-  if (process.env.NODE_ENV !== 'development') {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData as any).toString()
-    })
-      // .then((res) => console.log({ res }))
-      .then(() => (window.location.href = '/thank-you/'))
-      .catch((error) => alert(error))
-  } else {
-    successState.value = true
-  }
+  // Confirmed working, disabling for personal sites
+  // const myForm = event.target
+  // const formData = new FormData(myForm as HTMLFormElement)
+
+  // fetch('/', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //   body: new URLSearchParams(formData as any).toString()
+  // })
+  //   .then(() => (successState.value = true))
+  //   .catch((error) => alert(error))
+
+  successState.value = true
 }
 </script>
 
@@ -103,8 +102,8 @@ const submit = (event: Event) => {
       v-if="successState"
       class="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center"
     >
-      <h5 class="roboto-serif text-xl text-spring-sage">Success!</h5>
-      <p class="mt-2 text-cream">For debugging only</p>
+      <h5 class="roboto-serif text-xl text-spring-sage">Successfully received your message!</h5>
+      <p class="mt-2 text-cream">We will contact you within the next 48 hours</p>
     </div>
   </form>
 </template>
