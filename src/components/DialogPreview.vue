@@ -5,7 +5,7 @@ defineEmits(['close'])
 
 <template>
   <div
-    class="fixed top-0 left-0 w-screen h-screen bg-black/30 text-cream flex"
+    class="fixed top-0 left-0 w-screen h-screen bg-black/30 text-cream flex z-10"
     @click="$emit('close')"
   >
     <button
