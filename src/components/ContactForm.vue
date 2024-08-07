@@ -44,7 +44,7 @@ const submit = (event: Event) => {
 
 <template>
   <form
-    class="bg-russet/70 rounded-xl px-5 py-6 w-[420px] relative"
+    class="bg-russet/70 rounded-xl px-5 py-6 w-[420px] relative shadow-lg"
     @submit.prevent="submit($event)"
     name="contactForm"
     data-netlify="true"

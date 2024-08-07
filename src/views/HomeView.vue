@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import { ref, onUnmounted } from 'vue'
 import ContactForm from '@/components/ContactForm.vue'
+import DialogPreview from '@/components/DialogPreview.vue'
 
-const slides = ref([
-  { bg: '#906B3A' },
-  { bg: '#CF946F' },
-  { bg: '#E9D7C7' },
-  { bg: '#D6E0CB' },
-  { bg: '#939B7B' }
-])
+const slides = ref(new Array(5))
+const photos = ref(new Array(20))
+const selectedPhoto = ref(0)
 
 const activeSlide = ref(0)
 const interval = setInterval(() => {
   activeSlide.value = (activeSlide.value + 1) % slides.value.length
 }, 3000)
+
+const bgColor = (index: number) => {
+  const colors = ['#906B3A', '#CF946F', '#E9D7C7', '#D6E0CB', '#939B7B']
+  return colors[index % colors.length]
+}
 
 onUnmounted(() => clearInterval(interval))
 </script>
@@ -24,11 +26,11 @@ onUnmounted(() => clearInterval(interval))
     <div class="slides w-full relative">
       <div class="slides__contents h-[670px] relative">
         <div
-          v-for="(s, sI) in slides"
+          v-for="(_, sI) in slides"
           :key="`slide-${sI}`"
           class="h-full absolute top-0 left-0 w-full h-full slide after:content-[''] after:block after:absolute after:top-0 after:left-0 after:w-[inherit] after:h-[inherit] after:bg-black/30"
           :class="sI === activeSlide ? 'opacity-100' : 'opacity-0'"
-          :style="{ backgroundColor: s.bg }"
+          :style="{ backgroundColor: bgColor(sI) }"
         ></div>
       </div>
 
@@ -93,7 +95,7 @@ onUnmounted(() => clearInterval(interval))
 
           <table class="table-auto mt-4 w-full">
             <thead>
-              <tr class="bg-russet/20">
+              <tr class="bg-olive/20">
                 <th class="py-3 rounded-tl-md">Rate</th>
                 <th class="py-3 pr-3 text-right">1 person room</th>
                 <th class="py-3 pr-3 text-right">2 person room</th>
@@ -115,15 +117,59 @@ onUnmounted(() => clearInterval(interval))
               </tr>
             </tbody>
             <tfoot>
-              <tr class="bg-russet/20">
+              <tr class="bg-olive/20">
                 <td class="h-2 rounded-b-md" colspan="4"></td>
               </tr>
             </tfoot>
           </table>
         </div>
 
-        <div class="h-full bg-olive rounded-lg col-span-2"></div>
+        <div class="h-full bg-olive rounded-lg col-span-2 shadow-lg"></div>
       </div>
+    </section>
+
+    <section class="pt-10 pb-20">
+      <div class="container">
+        <h2 class="roboto-serif text-russet text-4xl">More from De Berk</h2>
+
+        <div class="columns-4 gap-6 mt-8">
+          <div
+            v-for="(_, pI) in photos"
+            :key="`photo-${pI}`"
+            class="w-full rounded-lg shadow-lg hover:shadow-2xl opacity-90 hover:opacity-100 transition-all duration-300 cursor-zoom-in"
+            :class="{
+              'mt-6': pI > 0,
+              'shadow-2xl': selectedPhoto === pI
+            }"
+            :style="{
+              height: `${((pI + 1) * 160) % 360}px`,
+              backgroundColor: bgColor(pI)
+            }"
+            @click="selectedPhoto = pI"
+          ></div>
+        </div>
+      </div>
+
+      <DialogPreview
+        v-if="selectedPhoto"
+        :image="bgColor(selectedPhoto)"
+        @close="selectedPhoto = 0"
+      />
     </section>
   </main>
 </template>
+
+<script>
+/**
+ * To do list
+ * - Separate home sections into different components nested under `components/home`
+ * - Anchor scrolling
+ * - Persistent nav
+ * - improve form fields, move placeholder/label to above the field
+ * - For Production in forked repo under Wypoon
+ *    - scrape images, and replace color blocks with actual images
+ *    - set up emailing
+ *    - refactor photo grid and dialog preview with proper images and their
+ *      respective heights
+ */
+</script>
