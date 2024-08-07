@@ -50,7 +50,7 @@ onUnmounted(() => clearInterval(interval))
         class="slide__controls flex justify-center gap-5 absolute bottom-6 mx-auto left-0 right-0"
       >
         <button
-          v-for="(s, sI) in slides"
+          v-for="(_, sI) in slides"
           :key="`slide-control-${sI}`"
           :class="sI === activeSlide ? 'bg-cream w-8' : 'bg-olive w-4'"
           class="text-[0] h-4 rounded-full transition-all duration-300"
@@ -60,5 +60,70 @@ onUnmounted(() => clearInterval(interval))
         </button>
       </div>
     </div>
+
+    <section class="py-20">
+      <div class="container grid grid-cols-5 gap-12">
+        <div class="text-clay col-span-3">
+          <h2 class="roboto-serif text-russet text-4xl">Rooms and Rates</h2>
+
+          <p class="mt-4 leading-6">
+            Experience the perfect blend of comfort and convenience in our meticulously maintained
+            hotel rooms, each thoughtfully designed to include a private bathroom and a functional
+            writing desk.
+          </p>
+
+          <p class="mt-4 leading-6">
+            De Berk offers 11 inviting rooms, collectively accommodating up to 29 guests. Each room
+            features cozy beds and its own bathroom, ensuring a relaxing stay. Towels and bed linen
+            are included, and all guests are welcome to access the free WiFi.
+          </p>
+
+          <p class="mt-4 leading-6">Our accommodations include:</p>
+
+          <ul class="list-disc pl-4 mt-4 leading-6">
+            <li>4 double rooms, with 2 featuring connecting doors that are ideal for families.</li>
+            <li>7 rooms with three (3) beds, perfect for small groups or families.</li>
+          </ul>
+
+          <p class="mt-4 leading-6">
+            For our youngest guests, baby cots are available at no additional cost.
+          </p>
+
+          <p class="mt-4 leading-6">For pricing information, please see below:</p>
+
+          <table class="table-auto mt-4 w-full">
+            <thead>
+              <tr class="bg-russet/20">
+                <th class="py-3 rounded-tl-md">Rate</th>
+                <th class="py-3 pr-3 text-right">1 person room</th>
+                <th class="py-3 pr-3 text-right">2 person room</th>
+                <th class="py-3 pr-3 rounded-tr-md text-right">3 person room</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-3 text-center border-l border-b">Room / night</td>
+                <td class="py-3 pr-3 text-right border-b">€ 75</td>
+                <td class="py-3 pr-3 text-right border-b">€ 85</td>
+                <td class="py-3 pr-3 text-right border-b border-r">€ 95</td>
+              </tr>
+              <tr>
+                <td class="py-3 text-center border-l border-b">Breakfast Buffet</td>
+                <td class="py-3 pr-3 text-right border-b">€ 9.50</td>
+                <td class="py-3 pr-3 text-right border-b">€ 19</td>
+                <td class="py-3 pr-3 text-right border-b border-r">€ 28.50</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="bg-russet/20">
+                <td class="h-2 rounded-b-md" colspan="4"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="h-full bg-olive rounded-lg col-span-2"></div>
+      </div>
+    </section>
   </main>
 </template>
