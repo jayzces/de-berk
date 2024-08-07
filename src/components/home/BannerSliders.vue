@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ContactForm from '../ContactForm.vue'
+import ContactForm from './ContactForm.vue'
 import { onUnmounted, ref } from 'vue'
 
 const activeSlide = ref(0)
@@ -18,7 +18,7 @@ onUnmounted(() => clearInterval(interval))
 </script>
 
 <template>
-  <div class="slides w-full relative">
+  <div class="slides w-full relative" id="book">
     <div class="slides__contents h-[670px] relative">
       <div
         v-for="(_, sI) in slides"

@@ -7,7 +7,7 @@ import PhotoGrid from '@/components/home/PhotoGrid.vue'
   <main>
     <BannerSliders />
 
-    <section class="py-[100px]">
+    <section class="pt-[100px] pb-11" id="rooms-and-rates">
       <div class="container grid grid-cols-5 gap-12">
         <div class="text-clay col-span-3">
           <h2 class="roboto-serif text-russet text-4xl">Rooms and Rates</h2>
@@ -72,7 +72,7 @@ import PhotoGrid from '@/components/home/PhotoGrid.vue'
       </div>
     </section>
 
-    <section class="pt-10 pb-[100px]">
+    <section class="py-[100px]" id="more-photos">
       <PhotoGrid />
     </section>
   </main>
@@ -81,7 +81,6 @@ import PhotoGrid from '@/components/home/PhotoGrid.vue'
 <script lang="ts">
 /**
  * To do list
- * - Separate home sections into different components nested under `components/home`
  * - Anchor scrolling
  * - improve form fields, move placeholder/label to above the field
  * - For Production in forked repo under Wypoon
