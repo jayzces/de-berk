@@ -34,7 +34,8 @@ const submit = (event: Event) => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData as any).toString()
     })
-      .then(() => (window.location.href = '/thank-you/'))
+      .then((res) => console.log({ res }))
+      // .then(() => (window.location.href = '/thank-you/'))
       .catch((error) => alert(error))
   } else {
     successState.value = true
