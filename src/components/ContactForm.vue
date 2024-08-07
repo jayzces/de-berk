@@ -48,7 +48,9 @@ const submit = (event: Event) => {
     class="bg-russet/70 rounded-xl px-5 py-6 w-[420px] relative"
     @submit.prevent="submit($event)"
     name="contactForm"
-    netlify
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    method="post"
   >
     <div class="flex flex-wrap gap-4" :class="successState ? 'opacity-0' : 'opacity-100'">
       <h5 class="text-cream w-full text-center">Contact us to book your room</h5>
