@@ -17,7 +17,8 @@
     <div id="app"></div>
 
     <!-- hidden netlify form -->
-    <form netlify name="contactForm" method="POSt" hidden>
+    <form netlify netlify-honeypot="bot-field" name="contactForm" method="POSt">
+      <input class="hidden" name="bot-field" />
       <input type="text" name="name" />
       <input type="text" name="mobile" />
       <input type="email" name="email" />

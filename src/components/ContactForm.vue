@@ -34,8 +34,8 @@ const submit = (event: Event) => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData as any).toString()
     })
-      .then((res) => console.log({ res }))
-      // .then(() => (window.location.href = '/thank-you/'))
+      // .then((res) => console.log({ res }))
+      .then(() => (window.location.href = '/thank-you/'))
       .catch((error) => alert(error))
   } else {
     successState.value = true
@@ -55,6 +55,7 @@ const submit = (event: Event) => {
     <div class="flex flex-wrap gap-4" :class="successState ? 'opacity-0' : 'opacity-100'">
       <h5 class="text-cream w-full text-center">Contact us to book your room</h5>
       <input type="hidden" name="form-name" value="contactForm" />
+      <input class="hidden" name="bot-field" type="text" />
       <input
         type="text"
         name="name"
