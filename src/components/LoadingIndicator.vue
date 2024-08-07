@@ -1,9 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const width = ref(100)
-</script>
-
 <template>
-  <div class="h-[8px] bg-olive" :style="{ width: `${width}%` }"></div>
+  <div class="w-full h-[8px] bg-olive sticky top-0 left-0 right-0 z-10"></div>
 </template>

@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { ref, onUnmounted } from 'vue'
 import ContactForm from '@/components/ContactForm.vue'
 import DialogPreview from '@/components/DialogPreview.vue'
+import { onUnmounted, ref } from 'vue'
 
 const slides = ref(new Array(5))
 const photos = ref(new Array(20))
 const selectedPhoto = ref(0)
-
 const activeSlide = ref(0)
 const interval = setInterval(() => {
   activeSlide.value = (activeSlide.value + 1) % slides.value.length
@@ -63,7 +62,7 @@ onUnmounted(() => clearInterval(interval))
       </div>
     </div>
 
-    <section class="py-20">
+    <section class="py-[100px]">
       <div class="container grid grid-cols-5 gap-12">
         <div class="text-clay col-span-3">
           <h2 class="roboto-serif text-russet text-4xl">Rooms and Rates</h2>
@@ -159,12 +158,11 @@ onUnmounted(() => clearInterval(interval))
   </main>
 </template>
 
-<script>
+<script lang="ts">
 /**
  * To do list
  * - Separate home sections into different components nested under `components/home`
  * - Anchor scrolling
- * - Persistent nav
  * - improve form fields, move placeholder/label to above the field
  * - For Production in forked repo under Wypoon
  *    - scrape images, and replace color blocks with actual images
