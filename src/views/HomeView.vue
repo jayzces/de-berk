@@ -10,7 +10,7 @@ import PhotoGrid from '@/components/home/PhotoGrid.vue'
     <section class="pt-20 md:pt-[100px] lg:pb-11" id="rooms-and-rates">
       <div class="container flex flex-col lg:grid lg:grid-cols-5 gap-4 lg:gap-12">
         <div class="text-clay col-span-3 max-lg:order-2">
-          <h2 class="roboto-serif text-russet text-4xl">Rooms and Rates</h2>
+          <h2 class="roboto-serif text-russet text-3xl lg:text-4xl">Rooms and Rates</h2>
 
           <p class="mt-4 leading-6">
             Experience the perfect blend of comfort and convenience in our meticulously maintained
