@@ -1,39 +1,23 @@
-# de-berk
+# De Berk
 
-This template should help get you started developing with Vue 3 in Vite.
+Source skeleton code for an internal Wypoon Website built with [Vue 3](https://vuejs.org/) and [Vite](https://vitejs.dev/).
 
-## Recommended IDE Setup
+![Preview](preview.png)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Requirements
 
-## Type Support for `.vue` Imports in TS
+- [Node](https://nodejs.org/en) v20.10.0 and later versions
+- [NPM](https://www.npmjs.com/) 10.8.2 and later versions
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Scripts
 
 ```sh
-npm install
-```
+npm install       # install dependencies
+npm run dev       # run development server
+npm run build     # compile for production server
+npm run preview   # run production server (after build)
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+# dev scripts
+npm run lint      # run linter
+npm run format    # run prettier
 ```
