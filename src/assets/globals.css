@@ -19,7 +19,7 @@
 }
 
 .container {
-  @apply w-full px-5 mx-auto;
+  @apply w-full px-3 md:px-5 mx-auto;
 }
 
 input:focus,

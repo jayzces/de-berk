@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import DialogPreview from '../DialogPreview.vue'
+import DialogPreview from './DialogPreview.vue'
 import { ref } from 'vue'
 
 const photos = ref(new Array(20))

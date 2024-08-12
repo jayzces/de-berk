@@ -19,7 +19,7 @@ onUnmounted(() => clearInterval(interval))
 
 <template>
   <div class="slides w-full relative" id="book">
-    <div class="slides__contents h-[670px] relative">
+    <div class="slides__contents h-[calc(100vh_+_64px)] md:h-[670px] relative">
       <div
         v-for="(_, sI) in slides"
         :key="`slide-${sI}`"
@@ -30,16 +30,17 @@ onUnmounted(() => clearInterval(interval))
     </div>
 
     <div class="slides__overlays absolute top-0 left-0 right-0 bottom-0 flex">
-      <div class="container pr-0 flex justify-between items-center m-auto">
-        <div>
-          <h1 class="roboto-serif text-cream text-5xl">Holiday Home De Berk</h1>
-          <h2 class="roboto-serif text-soft-peach text-4xl mt-5 leading-[3rem]">
-            The ideal base for those who enjoy walking, <br />
-            and cycling in a peaceful environment
+      <div class="container pr-0 flex justify-between items-center max-lg:flex-col m-auto">
+        <div class="max-lg:text-center">
+          <h1 class="roboto-serif text-cream lg:text-5xl text-3xl">Holiday Home De Berk</h1>
+          <h2
+            class="roboto-serif text-soft-peach lg:text-4xl text-2xl lg:mt-5 mt-3 lg:leading-[3rem] leading-8 max-w-[760px]"
+          >
+            The ideal base for those who enjoy walking, and cycling in a peaceful environment
           </h2>
         </div>
 
-        <ContactForm />
+        <ContactForm class="max-lg:mt-6" />
       </div>
     </div>
 

@@ -4,12 +4,12 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <nav
-    class="h-20 flex bg-cream transition-all duration-300 z-[5] sticky top-[8px] left-0 right-0 shadow"
+    class="h-[56px] md:h-20 flex bg-cream transition-all duration-300 z-[5] sticky top-[8px] left-0 right-0 shadow"
   >
     <div class="container flex justify-between">
-      <button type="button" class="roboto-serif text-olive text-2xl">De Berk</button>
+      <button type="button" class="roboto-serif text-olive text-xl md:text-2xl">De Berk</button>
 
-      <RouterLink :to="{ path: '/', hash: '#book' }" class="text-russet flex items-center"
+      <RouterLink :to="{ path: '/', hash: '#book' }" class="text-russet flex items-center text-sm"
         >Book Now</RouterLink
       >
     </div>
