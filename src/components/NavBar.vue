@@ -9,7 +9,9 @@ import { RouterLink } from 'vue-router'
     <div class="container flex justify-between">
       <button type="button" class="roboto-serif text-olive text-xl md:text-2xl">De Berk</button>
 
-      <RouterLink :to="{ path: '/', hash: '#book' }" class="text-russet flex items-center text-sm"
+      <RouterLink
+        :to="{ path: '/', hash: '#book' }"
+        class="text-russet flex items-center max-md:text-sm"
         >Book Now</RouterLink
       >
     </div>
