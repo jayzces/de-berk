@@ -80,7 +80,7 @@ const submit = (event: Event) => {
         <input
           type="date"
           name="check-in"
-          class="px-3 lg:px-4 lg:leading-[48px] leading-[36px] h-[36px] max-lg:text-[14px] bg-cream text-russet rounded-md block placeholder:text-clay w-full"
+          class="px-3 lg:px-4 lg:leading-[48px] leading-[36px] lg:h-[48px] h-[36px] max-lg:text-[14px] bg-cream text-russet rounded-md block placeholder:text-clay w-full"
           :min="formatDate(minDay)"
           placeholder="Check In"
           v-model="checkIn"
@@ -93,7 +93,7 @@ const submit = (event: Event) => {
         <input
           type="date"
           name="check-out"
-          class="px-3 lg:px-4 lg:leading-[48px] leading-[36px] h-[36px] max-lg:text-[14px] bg-cream text-russet rounded-md block placeholder:text-clay w-full"
+          class="px-3 lg:px-4 lg:leading-[48px] leading-[36px] lg:h-[48px] h-[36px] max-lg:text-[14px] bg-cream text-russet rounded-md block placeholder:text-clay w-full"
           :min="formatDate(nextDay)"
           placeholder="Check Out"
           required
